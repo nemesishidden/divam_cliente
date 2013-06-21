@@ -73,7 +73,7 @@ var baseDatos = {
 		        var sobrante = largoCadena-3;
 		        var valorDeReferencia = r.valor_referencia.toString().substring(0,sobrante)+'.'+r.valor_referencia.toString().substring(largoCadena-3,largoCadena);
 		        var chk = '<input type="checkbox" name="checkbox-'+r.isbn+'" id="checkbox-'+r.isbn+'" class="custom"/> <label for="checkbox-'+r.isbn+'"><p class="label-sol"><img src="style/img/icons/solEnviadas.png" style="float:left;">'+r.nombre_libro+'<br/>Precio: $'+valorDeReferencia+'<br>Cantidad: '+r.cantidad +'<br /></p></label>';
-		        $('#listadoSolicitudesPorEnviar').append(chk);
+		        $('#listadoSolicitudesPorEnviar').append(chk).refresh();
 		    }
 		}else{
 			document.getElementById("sinResultadoSolicitud").innerHTML = 'Usted no tiene solicitudes por enviar.';			

@@ -187,7 +187,7 @@ var app = {
 
     querySuccessSolicitiudesPorEnviar: function(tx, results) {
         var len = results.rows.length;
-        console.log("Tabla SolicitiudesPorEnviar: " + len + " filas encontradas.");
+        console.log("Tabla SolicitiudesPorEnviarkkkkk: " + len + " filas encontradas.");
         for (var i=0; i<len; i++){
             var r = results.rows.item(i);
             console.log(r);
