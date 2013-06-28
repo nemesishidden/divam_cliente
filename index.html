@@ -65,8 +65,14 @@
                 <div data-role="header" data-position="fixed">
                     <h1>DIBAM</h1>
                 </div>
-                <div data-role="content">   
-                    <ul data-role="listview">
+                <div data-role="content" style="padding: 0px;">
+                    <div style="background:#FDCA9D; margin: -15px; position: center;text-align: center; padding: 5% 0 5% 0;">
+
+                        <p>Presupuesto Valido Hasta: <span id="presupuestoValidoHasta"></span></p>
+                        <p>Disponible: <span id="presupuestoDisponible"></span></p>
+                        <p>Utilizado: <span id="presupuestoUtilizado"></span></p>
+                    </div>  
+                    <ul data-role="listview" style="margin:0px;">
                         <li><a href=""><img src="style/img/
 icons/nuevaSolicitud.png" alt="Buy"><p class="ui-li-desc-menu">Nueva Solicitud</p></a>
                             <ul data-role="listview" data-inset="true">
@@ -146,8 +152,15 @@ icons/solEnviadas.png"><p class="ui-li-desc-menu">Solicitudes enviadas</p></a></
                 <div data-role="content">   
                     <!-- <ul id="listadoSolicitudesPorEnviar" data-role="listview"></ul><br /> <br />   
                     <a href="" data-role="button">Enviar</a> -->
-                    <p>TOTAL PRESUPUESTO: <span id="total_presupuesto"></span>
+                    <div style="background:#FDCA9D; margin: -15px; position: center;text-align: center; padding: 5% 0 5% 0;">
+
+                        <p>Presupuesto Valido Hasta: <span id="presupuestoValidoHasta"></span></p>
+                        <p>Disponible: <span id="presupuestoDisponible"></span></p>
+                        <p>Utilizado: <span id="presupuestoUtilizado"></span></p>
+                    </div>      
+                    <!-- <p>TOTAL PRESUPUESTO: <span id="total_presupuesto"></span> -->
                     <form action="" method="get" lang="es">
+                        <!--<ul id="listadoSolicitudesPorEnviar" data-role="listview"></ul>-->
                         <fieldset id="listadoSolicitudesPorEnviar" data-role="controlgroup"></fieldset>
                         <span id="sinResultadoSolicitud"></span>
                     </form>

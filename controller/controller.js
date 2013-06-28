@@ -70,6 +70,7 @@ var app = {
                     $.mobile.changePage( pag, { transition: "slide"} );
                     window.db = baseDatos.abrirBD();
                     window.db.transaction(function(tx) {
+                            // baseDatos.eliminarTablaPresupuesto(tx);
                             baseDatos.tablaSolicitudesPorEnviar(tx);
                             baseDatos.tablaPresupuestos(tx);
                             baseDatos.verificarPresupuesto(tx, presupuestos);
@@ -91,9 +92,9 @@ var app = {
     },
 
     cambioPagina: function(){
-        app.buscarLibro(9789568410578);
-        var pag = '#'+this.id+'Pag';
-        $.mobile.changePage( pag, { transition: "slide"} );
+        app.buscarLibro(9789583001030);
+        // var pag = '#'+this.id+'Pag';
+        // $.mobile.changePage( pag, { transition: "slide"} );
     },
 
 
@@ -141,8 +142,8 @@ var app = {
         window.db.transaction(function(tx) {
             baseDatos.verificarLibro(tx,libro);
         }, baseDatos.errorGuardarLibro, baseDatos.successGuardarLibro);
-        var pag = '#inicio';
-        $.mobile.changePage( pag, { transition: "slide"} );
+        // var pag = '#inicio';
+        // $.mobile.changePage( pag, { transition: "slide"} );
     },
 
     queryDB: function(tx) {
