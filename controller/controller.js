@@ -121,7 +121,7 @@ var app = {
                             document.getElementById("autor").value = a.autor;
                             document.getElementById("precioReferencia").value = a.precioReferencia;
                         }else{
-                            alert('El libro no se encuentra en nuestros registros, por favor agregar manualmente.');
+                            //alert('El libro no se encuentra en nuestros registros, por favor agregar manualmente.');
                         }
                         $.mobile.changePage( '#newSolicitudPag', { transition: "slide"} );
                     });
