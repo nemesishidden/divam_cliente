@@ -8,9 +8,9 @@ var baseDatos = {
 	//Creacion de Tablas
     tablaSolicitudesPorEnviar:function(tx){
         tx.executeSql('create table if not exists Solicitudes_por_enviar (isbn, nombre_libro, valor_referencia, cantidad, imagen )');
+        console.log('tabla Solicitudes_por_enviar creada');
     },
     tablaPresupuestos:function(tx){
-
         tx.executeSql('create table if not exists Presupuestos (id unique, nombre, total, disponible, utilizado,fechaValido)');
         console.log('tabla presupuesto creada');
     },
@@ -29,6 +29,9 @@ var baseDatos = {
     	console.log(presupuesto);
         var fecha = new Date(presupuesto.fechaValidoHasta).toLocaleDateString();
         tx.executeSql('insert into Presupuestos (id, nombre, total, disponible, utilizado, fechaValido) VALUES ('+presupuesto.id+',"'+presupuesto.nombrePresupuesto+'",'+presupuesto.totalPresupuesto+','+presupuesto.disponiblePresupuesto+','+presupuesto.utilizado+',"'+fecha+'")');
+        document.getElementById('presupuestoValidoHasta').innerHTML = fecha;
+        document.getElementById('presupuestoDisponible').innerHTML = presupuesto.disponiblePresupuesto;
+        document.getElementById('presupuestoUtilizado').innerHTML = presupuesto.utilizado;
     },
 
     //Updates
@@ -96,7 +99,7 @@ var baseDatos = {
 		        var sobrante = largoCadena-3;
 		        var valorDeReferencia = r.valor_referencia.toString().substring(0,sobrante)+'.'+r.valor_referencia.toString().substring(largoCadena-3,largoCadena);
                 if($('#checkbox-'+r.isbn).length < 1){
-                    var chk = '<input type="checkbox" name="checkbox-'+r.isbn+'" id="checkbox-'+r.isbn+'" class="custom"/> <label for="checkbox-'+r.isbn+'"><p class="label-sol">'+r.nombre_libro+'<br/>Precio: $'+valorDeReferencia+'<br>Cantidad: '+r.cantidad +'<br /></p></label>';
+                    var chk = '<input type="checkbox" name="checkbox-'+r.isbn+'" id="checkbox-'+r.isbn+'" class="custom"/> <label for="checkbox-'+r.isbn+'"><p class="label-sol">'+r.nombre_libro+'</p><p class="label-precio">Precio: $'+valorDeReferencia+'</p><p class="label-cantidad">Cantidad: '+r.cantidad +'</p></label>';
                     // var chk = '<input type="checkbox" name="checkbox-'+r.isbn+'" id="checkbox-'+r.isbn+'" class="custom"/> <label for="checkbox-'+r.isbn+'"><p class="label-sol"><img src="style/img/icons/solEnviadas.png" style="float:left;">'+r.nombre_libro+'<br/>Precio: $'+valorDeReferencia+'<br>Cantidad: '+r.cantidad +'<br /></p></label>';
                     $('#listadoSolicitudesPorEnviar').append(chk); 
                 }

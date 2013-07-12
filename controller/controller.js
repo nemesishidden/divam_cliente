@@ -15,9 +15,10 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.getElementById('logear').addEventListener('click', this.logear, false);
         
-        document.getElementById('scan').addEventListener('click', this.scan, false);
+        //document.getElementById('scan').addEventListener('click', this.scan, false);
         document.getElementById('guardarLibro').addEventListener('click', this.guardarLibro, false);
-        document.getElementById('newSolicitud').addEventListener('click', this.cambioPagina, false);
+        //document.getElementById('newSolicitud').addEventListener('click', this.cambioPagina, false);
+        document.getElementById('newSolicitud').addEventListener('click', this.nuevaSolicitud, false);
         document.getElementById('solicituesPorEnviar').addEventListener('click', this.obtenerSolicitudes, false);
         
     },
@@ -81,6 +82,10 @@ var app = {
         });
     },
 
+    nuevaSolicitud: function(){
+        $.mobile.changePage( '#newSolicitudPag', { transition: "slide"} );
+    },
+
     obtenerSolicitudes: function(){
         var pag = '#'+this.id+'Pag';
         window.db.transaction(function(tx) {
@@ -92,7 +97,7 @@ var app = {
     },
 
     cambioPagina: function(){
-        app.buscarLibro(9789583001030);
+        //app.buscarLibro(9789583001030);
         // var pag = '#'+this.id+'Pag';
         // $.mobile.changePage( pag, { transition: "slide"} );
     },

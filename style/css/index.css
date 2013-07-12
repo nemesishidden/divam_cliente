@@ -41,7 +41,7 @@ body {
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
+    /*text-transform:uppercase;*/
     width:100%;
 }
 
@@ -125,4 +125,18 @@ h1 {
 }
 .label-sol{
     font-size: 11px;
+}
+.resumen{
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    text-shadow: 0 0px 0 #fff;
+}
+.divResumen{
+    background:#FDCB97;
+    margin: -15px;
+    position: center;
+    text-align: center;
+    padding: 5% 0 5% 0;
 }
