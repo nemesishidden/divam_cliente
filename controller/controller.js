@@ -41,20 +41,33 @@ var app = {
     },
 
     scan: function() {
-        console.log('scanning');
-        try {
-            window.plugins.barcodeScanner.scan(function(args) {
-                console.log("Scanner result: \n" +
-                    "text: " + args.text + "\n" +
-                    "format: " + args.format + "\n" +
-                    "cancelled: " + args.cancelled + "\n");
-                app.buscarLibro(args.text);
-                $.mobile.changePage( '#newSolicitudPag', { transition: "slide"} );
-                console.log(args);
-            });
-        } catch (ex) {
-            console.log(ex.message);
-        }
+        // console.log('scanning');
+        // try {
+        //     window.plugins.barcodeScanner.scan(function(args) {
+        //         console.log("Scanner result: \n" +
+        //             "text: " + args.text + "\n" +
+        //             "format: " + args.format + "\n" +
+        //             "cancelled: " + args.cancelled + "\n");
+        //         app.buscarLibro(args.text);
+        //         $.mobile.changePage( '#newSolicitudPag', { transition: "slide"} );
+        //         console.log(args);
+        //     });
+        // } catch (ex) {
+        //     console.log(ex.message);
+        // }
+        var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+
+        scanner.scan(
+            function (result) {
+                alert("We got a barcode\n" +
+                "Result: " + result.text + "\n" +
+                "Format: " + result.format + "\n" +
+                "Cancelled: " + result.cancelled);
+            }, 
+            function (error) {
+                alert("Scanning failed: " + error);
+            }
+        );
     },
 
     logear: function(){
