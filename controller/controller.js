@@ -15,7 +15,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.getElementById('logear').addEventListener('click', this.logear, false);
         
-        //document.getElementById('scan').addEventListener('click', this.scan, false);
+        document.getElementById('scan').addEventListener('click', this.scan, false);
         document.getElementById('guardarLibro').addEventListener('click', this.guardarLibro, false);
         //document.getElementById('newSolicitud').addEventListener('click', this.cambioPagina, false);
         document.getElementById('newSolicitud').addEventListener('click', this.nuevaSolicitud, false);
